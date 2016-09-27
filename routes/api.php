@@ -26,4 +26,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::delete("imoveis/{immobile}", ["as" => "api.admin.imoveis.destroy", "uses" => "ImovelController@destroy"]);
 });
 
+Route::group(['prefix' => 'public'], function () {
+    //LISTA TODOS OS PRÉ REGISTROS DE FARMACIA
+    Route::get("imoveis/", ["as" => "api.public.imoveis.index", "uses" => "MainController@index"]);
+    Route::get("imoveis/{immobile}", ["as" => "api.public.imoveis.show", "uses" => "MainController@show"]);
+});
+
 
