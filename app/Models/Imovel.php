@@ -12,7 +12,14 @@ class Imovel extends Model implements Transformable
 
     protected $table = "imoveis";
 
-    protected $fillable = ["status_id","type_id","image","address","number","complement","district","state","uf","description","price","condiminio","iptu","area","amount_room","amount_bathroom","parking_space","longitude","latitude"];
+    protected $fillable = ["status_id","type_id","user_id","image","address","number","complement","district","city","uf","title","description","price","condominio","iptu","area","amount_room","amount_bathroom","parking_space","longitude","latitude"];
 
+    public function status(){
+        return $this->belongsTo('App\Models\ImovelStatus');
+    }
+
+    public function type(){
+        return $this->belongsTo('App\Models\ImovelType');
+    }
 
 }
