@@ -10,6 +10,7 @@ namespace App\Services;
 
 
 use App\Criteria\AdminListImoveisCriteria;
+use App\Criteria\FilterPublicImovelCriteria;
 use App\Repositories\ImovelRepository;
 use Illuminate\Support\Facades\Auth;
 
@@ -176,5 +177,12 @@ class ImovelService
 
         $arraySuccess = array("data" => array("success" => true));
         return $arraySuccess;
+    }
+
+    public function listAll($request)
+    {
+        $data = $request->all();
+        $this->imovelRepository->pushCriteria(new FilterPublicImovelCriteria($data));
+        return $this->imovelRepository->with(['status', 'type','user'])->orderBy('created_at', 'desc')->paginate();
     }
 }
