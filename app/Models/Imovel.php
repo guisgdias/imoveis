@@ -22,4 +22,8 @@ class Imovel extends Model implements Transformable
         return $this->belongsTo('App\Models\ImovelType');
     }
 
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+
 }
