@@ -20,18 +20,17 @@ class CreateImovelsTable extends Migration
 			$table->integer("user_id")->unsigned();
 
 			$table->string("address");
-			$table->string("cep");
 			$table->string("number");
 			$table->string("complement")->nullable();
 			$table->string("district");
-			$table->string("state");
+			$table->string("city");
 			$table->string("uf");
 
 			$table->string("title");
 			$table->text("description");
 			$table->string("image");
 			$table->string("price");
-			$table->string("condiminio")->default("0");
+			$table->string("condominio")->default("0");
 			$table->string("iptu")->default("0");
 			$table->integer("area");
 			$table->integer("amount_room");
