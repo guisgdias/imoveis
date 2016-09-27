@@ -4,9 +4,89 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "551664e5cefbf56dde349d04b51b70c6",
-    "content-hash": "77cccb25bdf802a5758a1023046f931d",
+    "hash": "6938b576dbfa84d1307975409b068b71",
+    "content-hash": "a683f92bf8db12927acc4f2aeabcdc7a",
     "packages": [
+        {
+            "name": "aws/aws-sdk-php",
+            "version": "3.19.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aws/aws-sdk-php.git",
+                "reference": "eb9488f671175e708cf68c74cc04bd9115c96761"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/eb9488f671175e708cf68c74cc04bd9115c96761",
+                "reference": "eb9488f671175e708cf68c74cc04bd9115c96761",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^5.3.1|^6.2.1",
+                "guzzlehttp/promises": "~1.0",
+                "guzzlehttp/psr7": "~1.3.1",
+                "mtdowling/jmespath.php": "~2.2",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "andrewsville/php-token-reflection": "^1.4",
+                "aws/aws-php-sns-message-validator": "~1.0",
+                "behat/behat": "~3.0",
+                "doctrine/cache": "~1.4",
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "ext-simplexml": "*",
+                "ext-spl": "*",
+                "nette/neon": "^2.3",
+                "phpunit/phpunit": "~4.0|~5.0",
+                "psr/cache": "^1.0"
+            },
+            "suggest": {
+                "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
+                "doctrine/cache": "To use the DoctrineCacheAdapter",
+                "ext-curl": "To send requests using cURL",
+                "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Aws\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Amazon Web Services",
+                    "homepage": "http://aws.amazon.com"
+                }
+            ],
+            "description": "AWS SDK for PHP - Use Amazon Web Services in your PHP project",
+            "homepage": "http://aws.amazon.com/sdkforphp",
+            "keywords": [
+                "amazon",
+                "aws",
+                "cloud",
+                "dynamodb",
+                "ec2",
+                "glacier",
+                "s3",
+                "sdk"
+            ],
+            "time": "2016-09-22 19:32:03"
+        },
         {
             "name": "barryvdh/laravel-debugbar",
             "version": "v2.3.0",
@@ -575,6 +655,62 @@
             "time": "2015-12-05 17:17:57"
         },
         {
+            "name": "kamranahmedse/php-geocode",
+            "version": "v2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kamranahmedse/php-geocode.git",
+                "reference": "3f4544756d819d7be288099b05b2a3abbc6696af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kamranahmedse/php-geocode/zipball/3f4544756d819d7be288099b05b2a3abbc6696af",
+                "reference": "3f4544756d819d7be288099b05b2a3abbc6696af",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.2.*",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "KamranAhmed\\Geocode\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamran Ahmed",
+                    "homepage": "http://kamranahmed.info",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A wrapper around the Google Geocoding API to get different details such as latitude, longitude, country, city, district, postcode, town and street number regarding some specific address.",
+            "homepage": "https://github.com/kamranahmedse/php-geocode",
+            "keywords": [
+                "address",
+                "addresses",
+                "geocode",
+                "geocoder",
+                "geocoding",
+                "gmap",
+                "gmaps",
+                "google",
+                "location",
+                "map",
+                "maps"
+            ],
+            "time": "2016-01-22 19:59:55"
+        },
+        {
             "name": "laravel/framework",
             "version": "v5.3.10",
             "source": {
@@ -958,6 +1094,53 @@
             "time": "2016-08-10 08:55:11"
         },
         {
+            "name": "league/flysystem-aws-s3-v3",
+            "version": "1.0.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem-aws-s3-v3.git",
+                "reference": "dc56a8faf3aff0841f9eae04b6af94a50657896c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/dc56a8faf3aff0841f9eae04b6af94a50657896c",
+                "reference": "dc56a8faf3aff0841f9eae04b6af94a50657896c",
+                "shasum": ""
+            },
+            "require": {
+                "aws/aws-sdk-php": "^3.0.0",
+                "league/flysystem": "~1.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "henrikbjorn/phpspec-code-coverage": "~1.0.1",
+                "phpspec/phpspec": "^2.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\AwsS3v3\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Flysystem adapter for the AWS S3 SDK v3.x",
+            "time": "2016-06-21 21:34:35"
+        },
+        {
             "name": "league/oauth2-server",
             "version": "5.1.2",
             "source": {
@@ -1215,6 +1398,61 @@
                 "schedule"
             ],
             "time": "2016-01-26 21:23:30"
+        },
+        {
+            "name": "mtdowling/jmespath.php",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jmespath/jmespath.php.git",
+                "reference": "192f93e43c2c97acde7694993ab171b3de284093"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/192f93e43c2c97acde7694993ab171b3de284093",
+                "reference": "192f93e43c2c97acde7694993ab171b3de284093",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/jp.php"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JmesPath\\": "src/"
+                },
+                "files": [
+                    "src/JmesPath.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Declaratively specify how to extract elements from a JSON document",
+            "keywords": [
+                "json",
+                "jsonpath"
+            ],
+            "time": "2016-01-05 18:25:05"
         },
         {
             "name": "nesbot/carbon",
