@@ -26,6 +26,12 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
+
+        //QUOTES
+        Route::bind('immobile', function ($value) {
+            return \App\Models\Imovel::where('id', $value)->first();
+        });
+
     }
 
     /**
