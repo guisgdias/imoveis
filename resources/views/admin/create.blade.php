@@ -15,21 +15,32 @@
         <div class="col s12">
             <h5>Cadastrar imóvel</h5>
             <hr/>
-            Voltar
+            <a href="{{route("admin.imoveis.index")}}">Voltar</a>
 
         </div>
 
-        <form class="col s12">
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <form class="col s12" action="{{ route('admin.imovel.create') }}" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="title" name="title" type="text">
+                    <input id="title" name="title" value="{{old('title')}}" type="text">
                     <label for="title">Titulo</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <label class="labelCkEditor" for="description">Descrição</label>
-                    <textarea id="description" name="description"></textarea>
+                    <textarea id="description" name="description">{{old('description')}}</textarea>
                 </div>
             </div>
             <div class="file-field input-field">
@@ -43,21 +54,21 @@
             </div>
             <div class="row">
                 <div class="input-field col s12 m4">
-                    <input id="price" name="price" type="text">
+                    <input id="price" name="price" type="text" value="{{old('price')}}">
                     <label for="price">Preço</label>
                 </div>
                 <div class="input-field col s12 m4">
-                    <input id="condominio" name="condominio" type="text">
+                    <input id="condominio" name="condominio" type="text" value="{{old('condominio')}}">
                     <label for="condominio">Condominio</label>
                 </div>
                 <div class="input-field col s12 m4">
-                    <input id="iptu" name="iptu" type="text">
+                    <input id="iptu" name="iptu" type="text" value="{{old('iptu')}}">
                     <label for="iptu">IPTU</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12 m3">
-                    <input id="area" name="area" type="text">
+                    <input id="area" name="area" type="text" value="{{old('area')}}">
                     <label for="area">Área</label>
                 </div>
 
@@ -105,54 +116,48 @@
                 <div class="input-field col s12 m6">
                     <select  id="type_id" name="type_id">
                         <option value="" disabled selected>Selecione o tipo</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="3">4</option>
-                        <option value="3">5</option>
-                        <option value="3">6</option>
+                        @foreach($types as $type)
+                        <option value="{{$type->id}}">{{$type->description}}</option>
+                        @endforeach
                     </select>
                     <label>Tipo</label>
                 </div>
                 <div class="input-field col s12 m6">
                     <select  id="status_id" name="status_id">
                         <option value="" disabled selected>Selecione o status</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="3">4</option>
-                        <option value="3">5</option>
-                        <option value="3">6</option>
+                        @foreach($status as $res)
+                            <option value="{{$res->id}}">{{$res->description}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="address" name="address" type="text">
+                    <input id="address" name="address" type="text" value="{{old('address')}}">
                     <label for="address">Endereço</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12 m4">
-                    <input id="number" name="number" type="text">
+                    <input id="number" name="number" type="text" value="{{old('number')}}">
                     <label for="number">Número</label>
                 </div>
                 <div class="input-field col s12 m8">
-                    <input id="complement" name="complement" type="text">
+                    <input id="complement" name="complement" type="text" value="{{old('complement')}}">
                     <label for="complement">Complemento</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12 m4">
-                    <input id="district" name="district" type="text">
+                    <input id="district" name="district" type="text" value="{{old('district')}}">
                     <label for="district">Bairro</label>
                 </div>
                 <div class="input-field col s12 m4">
-                    <input id="city" name="city" type="text">
+                    <input id="city" name="city" type="text" value="{{old('city')}}">
                     <label for="city">Cidade</label>
                 </div>
                 <div class="input-field col s12 m4">
-                    <input id="uf" name="uf" type="text">
+                    <input id="uf" name="uf" type="text" value="{{old('uf')}}">
                     <label for="uf">UF</label>
                 </div>
             </div>

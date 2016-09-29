@@ -13,20 +13,23 @@
         <div class="col s12">
             <ul class="collection with-header">
                 <li class="collection-header"><h4>Meus imóveis</h4></li>
-                <li class="collection-item">
-                    <div>
-                        Alvin
-                        <a href="#" class="secondary-content iconsAction">
-                            <i class="material-icons">delete</i>
-                        </a>
-                        <a href="/admin/edit" class="secondary-content iconsAction">
-                            <i class="material-icons">mode_edit</i>
-                        </a>
-                        <a href="/admin/show" class="secondary-content iconsAction">
-                            <i class="material-icons">visibility</i>
-                        </a>
-                    </div>
-                </li>
+                @foreach($imoveis as $imovel)
+                    <li class="collection-item">
+                        <div>
+                            {{$imovel->title}}
+                            <a href="/admin/delete/{{$imovel->id}}" class="secondary-content iconsAction">
+                                <i class="material-icons">delete</i>
+                            </a>
+                            <a href="/admin/edit/{{$imovel->id}}" class="secondary-content iconsAction">
+                                <i class="material-icons">mode_edit</i>
+                            </a>
+                            <a href="/admin/show/{{$imovel->id}}" class="secondary-content iconsAction">
+                                <i class="material-icons">visibility</i>
+                            </a>
+                        </div>
+                    </li>
+                @endforeach
+                <div class="text-center">{!! $imoveis->render() !!}</div>
             </ul>
         </div>
     </div>

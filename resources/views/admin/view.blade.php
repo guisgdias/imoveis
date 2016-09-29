@@ -13,72 +13,72 @@
         <div class="col s12">
             <h5>Dados do imóvel</h5>
             <hr/>
-            Voltar
+            <a href="{{route("admin.imoveis.index")}}">Voltar</a>
         </div>
 
         <div class="col s12">
             <span class="labelInfo">Titulo:</span>
-            <p>Texto</p>
+            <p>{{$imovel->title}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Descrição:</span>
-            <p>Texto</p>
+            <p>{!! $imovel->description !!}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Imagem:</span>
-            <p><img src="https://s3-sa-east-1.amazonaws.com/ligadaweb/images/imoveis/fda610863dfa1cbf00d3623d9871d0b8.jpeg"></p>
+            <p><img src="{{$imovel->image}}"></p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Preço:</span>
-            <p>Texto</p>
+            <p>{{$imovel->price}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Condominio:</span>
-            <p>Texto</p>
+            <p>{{$imovel->condominio}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">IPTU:</span>
-            <p>Texto</p>
+            <p>{{$imovel->iptu}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Área:</span>
-            <p>Texto</p>
+            <p>{{$imovel->area}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Quantidade de quartos:</span>
-            <p>Texto</p>
+            <p>{{$imovel->amount_room}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Quantidade de banheiros:</span>
-            <p>Texto</p>
+            <p>{{$imovel->amount_bathroom}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Vagas de estacionamento:</span>
-            <p>Texto</p>
+            <p>{{$imovel->parking_space}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Endereço:</span>
-            <p>Texto</p>
+            <p>{{$imovel->address}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Numero:</span>
-            <p>Texto</p>
+            <p>{{$imovel->number}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Complemento:</span>
-            <p>Texto</p>
+            <p>{{$imovel->complement}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Bairro:</span>
-            <p>Texto</p>
+            <p>{{$imovel->district}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">Cidade:</span>
-            <p>Texto</p>
+            <p>{{$imovel->city}}</p>
         </div>
         <div class="col s12">
             <span class="labelInfo">UF:</span>
-            <p>Texto</p>
+            <p>{{$imovel->uf}}</p>
         </div>
 
 
