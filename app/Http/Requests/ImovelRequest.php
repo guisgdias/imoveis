@@ -47,7 +47,7 @@ class ImovelRequest extends FormRequest
                     'parking_space' => 'required|integer',
 
                     'address' => 'required|min:3|max:255',
-                    'number' => 'required|min:3|max:100',
+                    'number' => 'required|min:1|max:100',
                     'district' => 'required|min:3|max:100',
                     'city' => 'required|min:3|max:100',
                     'uf' => 'required|min:2|max:2',
@@ -73,7 +73,7 @@ class ImovelRequest extends FormRequest
                     'parking_space' => 'required|integer',
 
                     'address' => 'required|min:3|max:255',
-                    'number' => 'required|min:3|max:100',
+                    'number' => 'required|min:1|max:100',
                     'district' => 'required|min:3|max:100',
                     'city' => 'required|min:3|max:100',
                     'uf' => 'required|min:2|max:2',
