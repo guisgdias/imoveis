@@ -1,5 +1,5 @@
 @extends('layouts.front')
-@section('title_page', 'Página de Banners da Home')
+@section('title_page', 'ImoveisJa')
 @section('mainScript', '<script src="/js/imovel.js" ></script>')
 @section('content')
     @parent
