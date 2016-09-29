@@ -60,7 +60,7 @@
 
 <footer class="page-footer">
     <div class="footer-copyright">
-        <div class="container">
+        <div class="container" style="text-align: center">
             <span class="center-align">© 2016 Copyright Guilherme Dias</span>
         </div>
     </div>
