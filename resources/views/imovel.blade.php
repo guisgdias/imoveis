@@ -70,7 +70,7 @@
 
         <div class="col s12 m4">
             <p><i class="material-icons left">call</i><strong>Telefone para contato:</strong></p>
-            <p style="margin-left: 45px;">(21)232323-34343</p>
+            <p style="margin-left: 45px;">@{{ imovel.contact_phone }}</p>
         </div>
 
         <div class="col s12">

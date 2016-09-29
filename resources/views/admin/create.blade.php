@@ -54,6 +54,16 @@
             </div>
             <div class="row">
                 <div class="input-field col s12 m4">
+                    <input id="contact_name" name="contact_name" type="text" value="{{old('contact_name')}}">
+                    <label for="price">Nome do contato</label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <input id="contact_phone" name="contact_phone" type="text" value="{{old('contact_phone')}}">
+                    <label for="contact_phone">Telefone do contato</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m4">
                     <input id="price" name="price" type="text" value="{{old('price')}}">
                     <label for="price">Preço</label>
                 </div>
@@ -177,7 +187,7 @@
     <script type="text/javascript">
         CKEDITOR.replace('description');
         $( document ).ready(function() {
-            $('#contato_telefone').mask('(00) 00000-0000');
+            $('#contact_phone').mask('(00) 00000-0000');
             $('#price').mask("###0.00", {reverse: true});
             $('#condominio').mask("###0.00", {reverse: true});
             $('#iptu').mask("###0.00", {reverse: true});

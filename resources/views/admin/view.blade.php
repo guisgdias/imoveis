@@ -29,6 +29,14 @@
             <p><img src="{{$imovel->image}}"></p>
         </div>
         <div class="col s12">
+            <span class="labelInfo">Nome do contato:</span>
+            <p>{{$imovel->contact_name}}</p>
+        </div>
+        <div class="col s12">
+            <span class="labelInfo">Telefone de contato:</span>
+            <p>{{$imovel->contact_phone}}</p>
+        </div>
+        <div class="col s12">
             <span class="labelInfo">Preço:</span>
             <p>{{$imovel->price}}</p>
         </div>
