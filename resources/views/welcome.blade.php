@@ -45,10 +45,12 @@
     }
 
     .imageThumb{
-        width: 475px;
-        min-width: 475px;
-        height: 400px;
-        min-height: 400px;
+        width: 475px !important;
+        min-width: 475px !important;
+        max-width: 475px !important;
+        height: 400px !important;
+        min-height: 400px !important;
+        max-height: 400px !important;
     }
 </style>
 
