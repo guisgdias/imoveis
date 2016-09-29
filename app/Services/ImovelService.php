@@ -36,7 +36,7 @@ class ImovelService
 
     public function showImovel($imovel)
     {
-        $user = Auth::guard('api')->user();
+        $user = Auth::user();
         $userId = $user->id;
 
         if (is_null($imovel->id)) {
@@ -56,7 +56,7 @@ class ImovelService
     {
         $data = $request->all();
 
-        $user = Auth::guard('api')->user();
+        $user = Auth::user();
         $userId = $user->id;
 
         $data["user_id"] = $userId;
@@ -89,7 +89,7 @@ class ImovelService
     {
         $data = $request->all();
 
-        $user = Auth::guard('api')->user();
+        $user = Auth::user();
         $userId = $user->id;
 
         if (is_null($imovel->id)) {
@@ -115,11 +115,13 @@ class ImovelService
         $data["latitude"] = $latLong["latitude"];
         $data["longitude"] = $latLong["longitude"];
 
-        //SALVANDO IMAGEM NO S3 E SETANDO URL NO BANCO DE DADOS
-        $url = request()->file('image')->store('images/imoveis', 's3');
-        $urlCompleta = \Storage::disk('s3')->url($url);
+        if(isset($data["image"]) && !empty($data["image"])){
+            //SALVANDO IMAGEM NO S3 E SETANDO URL NO BANCO DE DADOS
+            $url = request()->file('image')->store('images/imoveis', 's3');
+            $urlCompleta = \Storage::disk('s3')->url($url);
 
-        $data["image"] = $urlCompleta;
+            $data["image"] = $urlCompleta;
+        }
 
         return $this->imovelRepository->update($data, $imovel->id);
 
@@ -160,7 +162,7 @@ class ImovelService
 
     public function destroy($imovel)
     {
-        $user = Auth::guard('api')->user();
+        $user = Auth::user();
         $userId = $user->id;
 
         if (is_null($imovel->id)) {
