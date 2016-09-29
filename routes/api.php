@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
-
+/*
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth:api'], function () {
     //LISTA TODOS OS PRÉ REGISTROS DE FARMACIA
     Route::get("imoveis/", ["as" => "api.admin.imoveis.index", "uses" => "ImovelController@index"]);
@@ -25,7 +25,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::put("imoveis/{immobile}", ["as" => "api.admin.imoveis.update", "uses" => "ImovelController@update"]);
     Route::delete("imoveis/{immobile}", ["as" => "api.admin.imoveis.destroy", "uses" => "ImovelController@destroy"]);
 });
-
+*/
 Route::group(['prefix' => 'public'], function () {
     //LISTA TODOS OS PRÉ REGISTROS DE FARMACIA
     Route::get("imoveis/", ["as" => "api.public.imoveis.index", "uses" => "MainController@index"]);
