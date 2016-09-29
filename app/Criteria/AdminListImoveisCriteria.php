@@ -22,7 +22,7 @@ class AdminListImoveisCriteria implements CriteriaInterface
      */
     public function apply($model, RepositoryInterface $repository)
     {
-        $user = Auth::guard('api')->user();
+        $user = Auth::user();
         $userId = $user->id;
 
         $model = $model->where('user_id', '=', $userId);
