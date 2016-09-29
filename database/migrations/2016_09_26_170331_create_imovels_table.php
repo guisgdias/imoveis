@@ -19,6 +19,9 @@ class CreateImovelsTable extends Migration
 			$table->integer("type_id")->unsigned();
 			$table->integer("user_id")->unsigned();
 
+			$table->string("contact_name");
+			$table->string("contact_phone");
+
 			$table->string("address");
 			$table->string("number");
 			$table->string("complement")->nullable();
