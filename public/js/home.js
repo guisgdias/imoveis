@@ -22,7 +22,14 @@ Vue.filter('fullAddress', function (imovel) {
 });
 
 new Vue({
-    el: '#main',
+    el: 'body',
+
+    data:{
+        search: {
+            address: ''
+        }
+
+    },
 
     ready: function(){
         this.fetchImoveis();
@@ -33,6 +40,13 @@ new Vue({
             this.$http.get('/api/public/imoveis').then((imoveis) => {
                 this.$set('imoveis', imoveis.data.data);
             });
+        },
+
+        onSubmitForm: function(e){
+            e.preventDefault();
+            this.$http.get('/api/public/imoveis?address='+this.search.address).then((imoveis) => {
+                this.$set('imoveis', imoveis.data.data);
+        });
         }
     }
 });
