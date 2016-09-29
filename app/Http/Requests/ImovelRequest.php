@@ -59,7 +59,7 @@ class ImovelRequest extends FormRequest
 
                     'title' => 'required|string|max:255',
                     'description' => 'required|string|min:3',
-                    'image' => 'required|image',
+                    'image' => 'image',
                     'price' => 'required|max:255',
                     'condominio' => 'max:255',
                     'iptu' => 'max:255',
