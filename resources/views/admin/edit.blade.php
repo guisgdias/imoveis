@@ -31,7 +31,7 @@
 
         <form class="col s12" action="{{ route('admin.imovel.update', ['immobile' => $imovel->id]) }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
-            <input type="text" name="_method" value="PUT" >
+            <input type="hidden" name="_method" value="PUT" >
             <div class="row">
                 <div class="input-field col s12">
                     <input id="title" name="title" value="{{$imovel->title}}" type="text">
